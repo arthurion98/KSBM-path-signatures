@@ -7,7 +7,7 @@ Communities in the Kuramoto model: dynamics and detection via path signatures, p
 contact:
 [tam.nguyen@epfl.ch](mailto:tam.nguyen@epfl.ch)
 
-# Installation
+## Installation
 
 In order to setup the environment using conda, you can use the following command,
 
@@ -21,7 +21,7 @@ The libraries required to run the model (not obtain the figures) are:
 * scipy (ODE solver)
 * sympy (permutations for agreement)
 
-### File Structure
+## File Structure
 
 * kuramoto.py: module to simulate a generalized kuramoto model
 * matrix_generation.py: module to generate stochastic block model (SBM) adjacency matrices
@@ -37,7 +37,7 @@ identify(M)
 '''
 where $M$ is any block clustered matrix of interest.
 
-### Quick-Start
+## Quick-Start
 
 Running the KSBM (here with the Standard KSBM parameters)
 
@@ -71,6 +71,6 @@ L = lead_matrix(path)
 L_sin = lead_matrix(sin_path)
 '''
 
-### Citation
+## Citation
 
 Will be provided here as soon as we upload the preprint
