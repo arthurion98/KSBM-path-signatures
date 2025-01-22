@@ -11,10 +11,10 @@ contact:
 
 In order to setup the environment using conda, you can use the following command,
 
-'''bash
+```bash
 conda create --name ksbm-path-signatures --file requirements.txt
 conda activate ksbm-path-signatures
-'''
+```
 
 The libraries required to run the model (not obtain the figures) are:
 * numpy
@@ -32,16 +32,16 @@ The libraries required to run the model (not obtain the figures) are:
 * Critical Times.ipynb: dominated & identical gaussian KSBM and critical times for various kappa (Figure 5)
 
 The structural community estimation algorithm is implemented in the jupyter notebooks as the function,
-'''bash
+```bash
 identify(M)
-'''
+```
 where $M$ is any block clustered matrix of interest.
 
 ## Quick-Start
 
 Running the KSBM (here with the Standard KSBM parameters)
 
-'''bash
+```bash
 import matrix_generation as mat
 from kuramoto import Kuramoto
 
@@ -49,7 +49,7 @@ N = 99                          # total number of oscillators
 n = 3                           # number of communities
 kappa = 100                     # coupling strength
 A = (kappa/N)*fc_SBM_mat        # coupling matrix
-freq = 2*np.array([1, 2, 3])/n
+freq = 2*np.array([1, 2, 3])/n  # (mean) intrinsic frequencies [rad/s]
 
 
 fc_SBM_mat = mat.fully_connected_SBM(N, n) # sampling an assortative SBM
@@ -57,11 +57,11 @@ fc_SBM_mat = mat.fully_connected_SBM(N, n) # sampling an assortative SBM
 t = np.linspace(0, 10, 500)
 model = Kuramoto(N, A, mu=0, sigma=0.1, frequencies=np.repeat(freq, N//n))
 sol = model.simulate(t).y # time-serie of oscillators' phase in time [N x 500]
-'''
+```
 
 Computing lead matrices
 
-'''bash
+```bash
 from signature import lead_matrix
 
 path = sol[:, :]
@@ -69,7 +69,7 @@ sin_path = np.sin(path)
 
 L = lead_matrix(path)
 L_sin = lead_matrix(sin_path)
-'''
+```
 
 ## Citation
 
